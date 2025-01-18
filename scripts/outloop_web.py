@@ -2,6 +2,8 @@ import json
 import random
 
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -29,7 +31,7 @@ class OutloopWeb:
         return chrome_options
     
     def initialize_driver(self):
-        driver = webdriver.Chrome("./../webdriver/chromedriver.exe", options=self.get_chrome_options())
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         driver.get(self.seed_url())
         return driver
         
