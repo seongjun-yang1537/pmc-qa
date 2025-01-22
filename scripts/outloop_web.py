@@ -31,7 +31,8 @@ class OutloopWeb:
         return chrome_options
     
     def initialize_driver(self):
-        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+        options = self.get_chrome_options()
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
         driver.get(self.seed_url())
         return driver
         

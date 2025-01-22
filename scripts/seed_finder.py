@@ -4,7 +4,7 @@ import msvcrt
 
 from outloop_web_container import OutloopWebContainer
     
-DRIVER_COUNT = 1
+DRIVER_COUNT = 5
 web_container = OutloopWebContainer(DRIVER_COUNT)
 
 def onKeyDown(key):
