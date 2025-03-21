@@ -6,7 +6,7 @@ from web import WebMode
 
 container = WebContainer()
 
-container.addWeb(WebMode.SIM, 3)
+container.addWeb(WebMode.SIM, 1)
 
 def onKeyDown(key):
     if key == 'q':

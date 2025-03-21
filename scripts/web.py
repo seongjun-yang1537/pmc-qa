@@ -37,7 +37,10 @@ class Web:
 
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
-        driver.get(self.create_url())
+        url_options = [
+            ['debug', 1]
+        ]
+        driver.get(self.create_url(url_options))
         return driver
     
     def create_url(self, options=[]):
@@ -55,7 +58,9 @@ class Web:
         pass
     
     def onUpdate(self):
-        print('update')
+        cmd = "set entity all life 100"
+        self.driver.execute_script(f"window.command.onRunCommand('{cmd}')")
+        pass
 
     def onClose(self):
         self.driver.close()
