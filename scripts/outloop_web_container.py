@@ -18,16 +18,15 @@ class OutloopWebContainer:
         for web in self.webs:
             web.close()
     
-    def update(self):
+    def update(self, seeds):
         for web in self.webs:
             web.update()
             self.logger.update()
             if web.is_finish():
                 if web.is_found():
+                    seeds.append(web.seed)
                     print('find seed', web.seed)
-                    return True
-                else :
-                    web.reload()
+                web.reload()
                     
 from datetime import datetime
                     
