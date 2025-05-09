@@ -5,7 +5,7 @@ import msvcrt
 from outloop_web_container import OutloopWebContainer
     
 DRIVER_COUNT = 5
-TARGET_COUNT = 5 # 찾으려고 하는 시드의 개수
+TARGET_COUNT = 15 # 찾으려고 하는 시드의 개수
 web_container = OutloopWebContainer(DRIVER_COUNT)
 
 def onKeyDown(key):

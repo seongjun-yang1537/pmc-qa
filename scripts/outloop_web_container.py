@@ -25,7 +25,8 @@ class OutloopWebContainer:
             if web.is_finish():
                 if web.is_found():
                     seeds.append(web.seed)
-                    print('find seed', web.seed)
+                    print(len(seeds), 'find seed', web.seed)
+                    print('now', seeds)
                 web.reload()
                     
 from datetime import datetime
